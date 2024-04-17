@@ -1,3 +1,3 @@
 # Medicaps Papers
 
-Thsis repo contains essentially __all the papers that I've found of from Medicaps University__  
+Thsis repo contains essentially __all the exam papers that I've found of from Medicaps University__  
