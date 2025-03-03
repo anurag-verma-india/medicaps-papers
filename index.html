@@ -40,6 +40,12 @@
                         >5th Semester</a
                     >
                 </li>
+                <li>
+                    <a
+                        href="https://github.com/anurag-verma-india/medicaps-papers/tree/main/6th%20sem"
+                        >6th Semester</a
+                    >
+                </li>
             </ul>
         </h2>
         <h4>From some other semester?</h4>
@@ -100,44 +106,46 @@
             asked them before some MST.
         </p>
 
-	<!-- <br> -->
-	<!-- <p id="visit-count">Visitor count: </p> -->
+        <!-- <br> -->
+        <!-- <p id="visit-count">Visitor count: </p> -->
     </body>
     <script>
         const KEY = `count_from_countapi`;
-const NAMESPACE = "anurag-verma-india.github.io/medicaps-papers";
-const COUNT_URL = `https://api.countapi.xyz`;
+        const NAMESPACE = "anurag-verma-india.github.io/medicaps-papers";
+        const COUNT_URL = `https://api.countapi.xyz`;
 
-const counter = document.getElementById("visit-count");
+        const counter = document.getElementById("visit-count");
 
-const getCount = async () => {
-    const response = await fetch(`${COUNT_URL}/get/${NAMESPACE}/${KEY}`);
-    const data = await response.json();
-    setValue(data.value);
-};
+        const getCount = async () => {
+            const response = await fetch(
+                `${COUNT_URL}/get/${NAMESPACE}/${KEY}`
+            );
+            const data = await response.json();
+            setValue(data.value);
+        };
 
-const incrementCount = async () => {
-    const response = await fetch(`${COUNT_URL}/hit/${NAMESPACE}/${KEY}`);
-    const data = await response.json();
-    setValue(data.value);
-};
+        const incrementCount = async () => {
+            const response = await fetch(
+                `${COUNT_URL}/hit/${NAMESPACE}/${KEY}`
+            );
+            const data = await response.json();
+            setValue(data.value);
+        };
 
-const setValue = (num) => {
-    counter.innerText = `Total Unique Visitor: ${num}`;
-};
+        const setValue = (num) => {
+            counter.innerText = `Total Unique Visitor: ${num}`;
+        };
 
-if (localStorage.getItem("hasVisited") == null) {
-    incrementCount()
-        .then(() => {
-            localStorage.setItem("hasVisited", "true");
-        })
-        .catch((err) => console.log(err));
-} else {
-    getCount()
-        .catch((err) => console.log(err));
-}
+        if (localStorage.getItem("hasVisited") == null) {
+            incrementCount()
+                .then(() => {
+                    localStorage.setItem("hasVisited", "true");
+                })
+                .catch((err) => console.log(err));
+        } else {
+            getCount().catch((err) => console.log(err));
+        }
 
-//https://stackoverflow.com/questions/43880617/log-visitors-on-github-page
-
+        //https://stackoverflow.com/questions/43880617/log-visitors-on-github-page
     </script>
 </html>
